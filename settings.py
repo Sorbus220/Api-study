@@ -1,4 +1,4 @@
-# Scrapy settings for jobparser project
+# Scrapy settings for leruamerlen project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,17 +7,18 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'jobparser'
+BOT_NAME = 'leruamerlen'
 
-SPIDER_MODULES = ['jobparser.spiders']
-NEWSPIDER_MODULE = 'jobparser.spiders'
+SPIDER_MODULES = ['leruamerlen.spiders']
+NEWSPIDER_MODULE = 'leruamerlen.spiders'
 
-LOG_ENABLED = True
-LOG_LEVEL ='DEBUG'       # ERROR INFO WARN
+IMAGES_STORE = 'images'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'
 
+LOG_ENABLED = True
+LOG_LEVEL ='DEBUG'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
@@ -47,13 +48,13 @@ COOKIES_ENABLED = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'jobparser.middlewares.JobparserSpiderMiddleware': 543,
+#    'leruamerlen.middlewares.LeruamerlenSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'jobparser.middlewares.JobparserDownloaderMiddleware': 543,
+#    'leruamerlen.middlewares.LeruamerlenDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +66,9 @@ COOKIES_ENABLED = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'jobparser.pipelines.JobparserPipeline': 300,
+    'leruamerlen.pipelines.LeruamerlenPipeline': 300,
+    'leruamerlen.pipelines.MNPhotosPipeline': 200,
+
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
